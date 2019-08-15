@@ -19,6 +19,7 @@ const signup = (req, res) => {
         if (err.code === 'ER_DUP_ENTRY') return res.status(409).send('Username is taken')
         return handleSQLError(res, err)
       }
+      console.log(hash)
       return res.send('Sign-up successful')
     })
   })
